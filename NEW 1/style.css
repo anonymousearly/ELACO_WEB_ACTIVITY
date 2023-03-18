@@ -1,0 +1,517 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    background-color: #252954;
+    transition: all .3s ease-in-out;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .firstpage {
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #1f1d2b;
+  }
+  
+  .firstpage .navigation_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  .navigation_bar .shapeslogowrap {
+    display: flex;
+    align-items: center;
+  }
+  .navigation_bar .shapes {
+    display: none;
+    color: #d7d7d7;
+    background-color: #1f1d2b;
+    border: none;
+    margin-right: 10px;
+  }
+
+  .navigation_bar .createbtn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    width: 126px;
+    height: 45px;
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .navigation_bar .createbtn.selectedbtn {
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+
+  }
+  .navigation_bar .createbtn.selectedbtn:hover{
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    opacity: 1;
+  }
+
+  .navigation_bar .navigation_titles {
+    height: 100%;
+    background: linear-gradient(89.51deg, #bf90eb 5.35%, #fa3333 88.81%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+  }
+
+  .navigation_bar .tpbuttons {
+    font-family: "Cursive";
+    font-style: normal;
+    margin-top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+
+  }
+  .navigation_bar .tpbuttons:hover{
+    background: linear-gradient(93.51deg, #ffffff 2.84%, #ffffff 99.18%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* border-bottom: 1.5px solid #9b51e0; */
+  }
+  
+  .navigation_bar .tpbuttons:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  @media screen and (max-width: 925px) {
+    .tbuttons {
+      display: none;
+    }
+  
+    .shapes {
+      display: flex !important;
+      align-items: center;
+    }
+  
+    .started-slimtext {
+      text-align: center;
+    }
+  }
+
+
+  .firstpage .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+
+  .box .txtinformation {
+    animation-name: leftslide;
+    animation-duration: 0.8s;
+    max-height: 500px;
+    max-width: 55%;
+    overflow: hidden;
+  }
+  .box .txtinformation-boldtext {
+    margin: 0;
+    font-family: Cursive;
+    color: #ffffff;
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: -2px;
+    text-align: left;
+  }
+  .box .txtinformation-slimtext {
+    margin: 24px 0;
+    font-family: Cursive;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+  .box .txtinformation-btnwrapper {
+    display: flex;
+  }
+  .box .txtinformation-explorebtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1d2b;
+    padding: 8px 38px;
+    border-radius: 16px;
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: -1px;
+    color: #ffffff;
+  }
+
+  .box .txtinformation .selected {
+    border: none;
+    background: linear-gradient(103.91deg, #9b51e0 21.01%, rgba(48, 129, 237, 0.8) 100%);
+  }
+
+  .box .display {
+    animation-name: rightslide;
+    animation-duration: 0.8s;
+    padding: 14px;
+    border: 1px solid;
+    background: linear-gradient(169.44deg, rgba(85, 191, 58, 0.08) 1.85%, rgba(65, 48, 90, 0.08) 98.72%);
+    border-radius: 35px;
+    max-height: 450px;
+    max-width: 50%;
+    overflow: hidden;
+  }
+  .box .display-pokemon {
+    object-fit: cover;
+    flex-shrink: 0;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 20px;
+
+  }
+  .box .display .infowrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .box .display .info {
+    display: flex;
+    align-items: center;
+    font-family: "Cursive";
+    font-style: normal;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .box .display .info p {
+    margin: 0;
+  }
+  .box .display .info-img {
+    object-fit: cover;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .box .display .info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-family: "Cursive";
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  .box .display .info2 p {
+    margin: 0;
+  }
+  .box .display .info2 .iconss {
+    display: flex;
+    align-items: center;
+  }
+  .box .display .info2 .iconss svg {
+    margin-right: 5px;
+  }
+
+  .firstpage .auction {
+    margin-top: 100px;
+  }
+
+  .auction .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+  }
+  .auction .title .titlebold {
+    margin: 0;
+    font-family: "Cursive";
+    font-style: normal;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 72px;
+  }
+  .auction .title .titleslim {
+    margin: 0;
+    font-family: "Cursive";
+    font-style: normal;
+    color: #d7d7d7;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    letter-spacing: -1px;
+  }
+  .auction .pokemon {
+    animation-name: leftslide;
+    animation-duration: 0.4s;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    justify-content: space-between;
+  }
+
+  .started {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  .started-boldtext {
+    margin: 0;
+    align-self: center;
+    font-family: "Cursive";
+    font-style: normal;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 72px;
+  }
+  .started-slimtext {
+    margin: 0;
+    align-self: center;
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    color: #e2e2e2;
+  }
+
+  .firstpage .discover {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .discover-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .discover-title p {
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: -1px;
+    color: #ffffff;
+  }
+  .discover-items {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    justify-content: space-between;
+  }
+  .firstpage .submission {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-top: 1px solid #f2f2f2;
+  }
+  
+  .submission p {
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 36px;
+    color: #828282;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+  .item-img {
+    object-fit: cover;
+    flex-shrink: 0;
+    width: 200px;
+    height: 220px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .item-img:hover {
+    transform: scale(1.05);
+  }
+  .item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .item-price{
+    font-family: "Cursive";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #bcbcbc;
+  }
+  .item-img{
+    width: 200px;
+    height: 200px;
+  }
+
+  @keyframes leftslide {
+    from {
+      transform: translateX(-600px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
+  @keyframes rightslide {
+    from {
+      transform: translateX(600px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
+
+  @media screen and (max-width: 1040px) {
+    .box {
+      flex-direction: column;
+    }
+    .box .txtinformation {
+      max-height: 450px;
+      max-width: none;
+      margin-bottom: 50px;
+    }
+    .box .display {
+      display: none;
+      max-height: none;
+      max-width: none;
+    }
+  
+    .auction .pokemon {
+      grid-template-columns: auto auto;
+      justify-content: space-around;
+    }
+  
+    .discover-items {
+      grid-template-columns: auto auto auto;
+      justify-content: space-around;
+    }
+  }
+  @media screen and (max-width: 825px) {
+    .started-items {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-evenly;
+      padding: 50px 0;
+    }
+  
+    .discover-items {
+      grid-template-columns: auto auto;
+      justify-content: space-around;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .box {
+      flex-direction: column;
+    }
+    .box .txtinformation {
+      max-height: none;
+      max-width: none;
+      margin-bottom: 50px;
+    }
+    .box .display {
+      display: block;
+      max-height: none;
+      max-width: none;
+    }
+    .display .display-pokemon{
+        width: 100%;
+        height: auto;
+        min-width: 200px;
+    }
+    .discover-title {
+      justify-content: center;
+    }
+    .discover-title .filters {
+      display: none;
+    }
+  
+    .auction .title {
+      justify-content: center;
+    }
+    .auction .title .titleslim {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .firstpage {
+      padding: 0 20px;
+    }
+  
+    .box .txtinformation-boldtext {
+      font-size: 45px;
+      line-height: 50px;
+    }
+    .box .txtinformation-slimtext {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  
+    .discover-items {
+      grid-template-columns: auto;
+      justify-content: space-around;
+    }
+  
+    .auction .pokemon {
+      grid-template-columns: auto;
+      justify-content: space-around;
+    }
+    .started-slimtext{
+        max-width: 80%;
+        margin: auto;
+    }
+
+  }
+  @media screen and (max-width: 480px) {
+    .firstpage .box .txtinformation-boldtext {
+      font-size: 32px;
+      line-height: 1.4em;
+      text-align: center;
+    }
+    .firstpage .box .txtinformation-slimtext {
+      text-align: center;
+    }
+    .firstpage .box .txtinformation-btnwrapper {
+      justify-content: center;
+    }
+  }
+
